@@ -1,0 +1,60 @@
+[
+  {
+    "type": "run_started",
+    "run_id": "r_001",
+    "query": "Analyse Apple R&D intensity vs large-cap peers (2019–2023)",
+    "timestamp": 1700000000000
+  },
+  {
+    "type": "agent_thought",
+    "task_id": "coordinator",
+    "thought": "Starting retrieval of Apple 10-K filings and competitor list.",
+    "timestamp": 1700000001000
+  },
+  {
+    "type": "task_spawned",
+    "task_id": "t_001",
+    "label": "Fetch Apple 10-K filings (2019–2023)",
+    "agent": "filing_fetcher",
+    "spawned_by": "coordinator",
+    "parallel_group": null,
+    "depends_on": [],
+    "timestamp": 1700000002000
+  },
+  {
+    "type": "task_spawned",
+    "task_id": "t_002",
+    "label": "Identify main large-cap peers",
+    "agent": "market_analyst",
+    "spawned_by": "coordinator",
+    "parallel_group": null,
+    "depends_on": [],
+    "timestamp": 1700000002500
+  },
+  {
+    "type": "tool_call",
+    "task_id": "t_001",
+    "tool": "sec_edgar_search",
+    "input_summary": "ticker=AAPL, form=10-K, years=2019–2023",
+    "timestamp": 1700000003000
+  },
+  {
+    "type": "tool_result",
+    "task_id": "t_001",
+    "tool": "sec_edgar_search",
+    "output_summary": "5 filings found.",
+    "timestamp": 1700000005000
+  },
+  {
+    "type": "task_update",
+    "task_id": "t_001",
+    "status": "complete",
+    "timestamp": 1700000006000
+  },
+  {
+    "type": "run_error",
+    "run_id": "r_001",
+    "message": "Coordinator encountered an unrecoverable error. Partial results may be available.",
+    "timestamp": 1700000008000
+  }
+]

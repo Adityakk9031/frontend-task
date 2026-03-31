@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useCallback } from 'react';
 // import './App.css';
 import { useAgentRun } from './hooks/useAgentRun';
 import { useMockEmitter } from '../mock/emitter';

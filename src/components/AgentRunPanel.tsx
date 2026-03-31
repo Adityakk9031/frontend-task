@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import type { RunState, TaskState } from '../types/events';
 
 interface AgentRunPanelProps {
@@ -69,7 +69,6 @@ export const AgentRunPanel: React.FC<AgentRunPanelProps> = ({ state, onReset }) 
       <div className="space-y-4">
         {task_order.map((taskId, index) => {
           const task = tasks[taskId];
-          const isLast = index === task_order.length - 1;
           
           // Group parallel tasks
           const isParallel = !!task.parallel_group;

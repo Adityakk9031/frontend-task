@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
-import type { RunState, RunEvent, TaskState, TaskStatus } from '../types/events';
+import { useState, useCallback, useRef } from 'react';
+import type { RunState, RunEvent, TaskState } from '../types/events';
 
 const INITIAL_STATE: RunState = {
   run_id: null,
